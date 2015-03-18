@@ -1,6 +1,10 @@
-<% @shirts.each do |shirt| %>
-  <div class="">
-    <a href="/shirts/<%= shirt.id %>"><%= shirt.name %></a>
-    <img src="<%= shirt.image_url %>" alt="<%= shirt.name %>" />
-  </div>
-<% end %>
+<section class='shirts'>
+  <% @shirts.each do |shirt| %>
+    <article class='shirt'>
+      <header>
+        <a href="/shirts/<%= shirt.id %>"><%= shirt.name %></a>
+      </header>
+      <img src="<%= shirt.image_url %>" alt="<%= shirt.name %>" />
+    </article>
+  <% end %>
+</section>
