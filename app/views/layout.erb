@@ -11,6 +11,9 @@
   <ul>
     <li><a href="/shirts">See all the shirts</a></li>
   </ul>
+  <% if session[:last_seen] %>
+    It looks like you checked out <%= recent.name %> <a href="/shirts/<%= recent.id %>">Buy it now</a>
+  <% end %>
 
   <%= yield %>
 

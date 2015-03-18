@@ -6,6 +6,7 @@ class ShirtsController < ApplicationController
 
   get '/shirts/:id' do
     @shirt = Shirt.find(params[:id])
+    session[:last_seen] = @shirt.id
     erb :"shirts/show"
   end
 
