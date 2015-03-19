@@ -1,5 +1,7 @@
 class ApplicationController < Sinatra::Base
   set :root, File.join(__dir__, "..")
+  enable :method_override
+
   enable :sessions
   set :session_secret, 'bk-002 is awesome!'
 
