@@ -4,5 +4,19 @@
       <a href="/shirts/<%= @shirt.id %>"><%= @shirt.name %></a>
     </header>
     <img src="<%= @shirt.image_url %>" alt="<%= @shirt.name %>" />
+    <% if logged_in? %>
+    <form action="/wardrobes" method="post">
+      <input type="hidden" name="shirt_id" value="<%= @shirt.id %>">
+      <button name="add_to_collection">Add To collection</button>
+    </form>
+    <% end %>
+    <p>
+      Users that currently own this shirt:
+    </p>
+    <ul>
+      <% @shirt.users.each do |user| %>
+        <li><%= user.username %></li>
+      <% end %>
+    </ul>
   </article>
 </section>
