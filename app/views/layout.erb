@@ -9,6 +9,12 @@
   <h1>Shracker</h1>
   <h2>Getcha Shrack On</h2>
 
+  <% if logged_in? %>
+    Welcome back, <%= current_user.username %>
+  <% else %>
+    <a href="/signin">Sign In</a> | <a href="/signup">Sign up</a>
+  <% end %>
+
   <ul>
     <li><a href="/shirts">See all the shirts</a></li>
   </ul>
